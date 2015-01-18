@@ -55,7 +55,7 @@ var Filmstrip = function(model, args) {
             autoResize: true,
         }
 
-        for (opt in opts) {
+        for (var opt in opts) {
             self[opt] = (args[opt] !== undefined) ? args[opt] : opts[opt];
         }
 
@@ -90,7 +90,7 @@ var Filmstrip = function(model, args) {
     };
 
     this.resize = function(width, height) {
-        if (width == 0 || height == 0) {
+        if (width === 0 || height === 0) {
             return;
         }
 
@@ -263,7 +263,7 @@ var Filmstrip = function(model, args) {
         var canvas = elem.get(0);
         var context = canvas.getContext('2d');
 
-        if (args.pos == 0) {
+        if (args.pos === 0) {
             canvas.width = this.width;
             canvas.height = this.height;
             if (this.strechOnResize && this._canvasDrawn) {
